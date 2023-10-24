@@ -1,0 +1,24 @@
+name: Heroku Deploy (Production)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: scrutinize-io-app-api-prod
+          heroku_email: ${{github.event.pusher.email}}
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: Scrutinize
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_FOOTER: ${{ github.event.repository.name }}

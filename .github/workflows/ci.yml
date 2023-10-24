@@ -1,0 +1,52 @@
+name: Node CI
+
+on:
+  push:
+    branches-ignore:
+      - develop
+      - main
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    env:
+      CI: true
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    # services:
+    #   postgres:
+    #     image: postgres:11.6
+    #     env:
+    #       POSTGRES_USER: postgres
+    #       POSTGRES_PASSWORD: postgres
+    #       POSTGRES_DB: postgres
+    #     ports:
+    #       - '0.0.0.0:5432:5432'
+    #     # needed because the postgres container does not provide a healthcheck
+    #     options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.18.1
+      # - name: Install pg_dump
+      #   run: |
+      #     sudo bash -c "echo deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main >> /etc/apt/sources.list.d/pgdg.list"
+      #     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+      #     sudo apt-get update
+      #     sudo apt-get -yqq install postgresql-client-11
+      # - name: Copy env
+      #   run: cp .env.ci .env
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: lint
+        run: yarn lint
+      - name: build
+        run: yarn build
+      - name: test
+        run: yarn test
