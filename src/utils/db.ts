@@ -1,7 +1,8 @@
 import { QueryBuilder } from 'knex'
 import { chunk } from 'lodash'
 // Context provider not included in this sample
-import { Context } from '../../../'
+// @ts-ignore
+import { Context } from '../app'
 import { deduplicateArray } from './object'
 
 type ConflictStrategy = 'merge' | 'ignore'

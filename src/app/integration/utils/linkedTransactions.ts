@@ -1,7 +1,6 @@
 import { compact, flatten, pick, cloneDeep } from 'lodash'
-import { ResponseTransaction } from '../../types/general'
+import { ResponseTransaction, LinkedTxnRef } from '../types'
 import { QBOLinkedTxnEndpoints } from '../constants'
-import { LinkedTxnRef } from '../types'
 
 type GetLinkedTxnRefsProps = {
   transactions: ResponseTransaction[]

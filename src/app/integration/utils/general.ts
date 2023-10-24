@@ -1,5 +1,4 @@
-import { pascalCase } from '../../../utils/string'
-import { IntuitQueryResponses, XeroQueryResponses } from '../types'
+import { IntuitQueryResponses } from '../types'
 import { ReportPeriod } from '../../../types'
 
 export function createIntuitFileKindMap(
