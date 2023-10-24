@@ -1,6 +1,8 @@
+// Context provider not included in this sample
+// @ts-ignore
 import { Context } from '../..'
 import { compact, cloneDeep } from 'lodash'
-import { ResponseTransaction } from '../../types/general'
+import { ResponseTransaction } from '../types'
 import { getQBOEntityKey } from '../utils/general'
 import {
   getQBOLinkedTxnRefs,

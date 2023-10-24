@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
 import { compact, map } from 'lodash'
 // Context provider and invariant (error creation) not included in this sample
+// @ts-ignore
 import { Context, invariant } from '../../../'
 import getIntegration from '../../helpers/getIntegration'
 import refreshIntuitIntegration from './refreshIntuitIntegration'

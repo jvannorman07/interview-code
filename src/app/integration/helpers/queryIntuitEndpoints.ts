@@ -1,7 +1,9 @@
+// Context provider not included in this sample
+// @ts-ignore
 import { Context } from '../..'
 import { compact, chunk } from 'lodash'
 import { QBOTransactionEndpoints } from '../constants'
-import { ResponseTransaction } from '../../types/general'
+import { ResponseTransaction } from '../types'
 import addQBOLinkedTransactions from './addQBOLinkedTransactions'
 import { getQBOEntityKey } from '../utils/general'
 import { chunkInsert } from '../../../utils/db'

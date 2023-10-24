@@ -1,4 +1,4 @@
-import { findObjectsWithProperty } from './properties'
+import findObjectsWithProperty from '../../../utils/findObjectsWithProperty'
 import { map } from 'lodash'
 
 export default function getTableFromQBResponse(qbResponse: { Header; Rows; Columns }) {

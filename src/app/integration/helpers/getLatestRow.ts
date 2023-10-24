@@ -1,4 +1,6 @@
 import { maxBy } from 'lodash'
+// Context provider not included in this sample
+// @ts-ignore
 import { Context } from '../..'
 
 type Props = {
@@ -21,5 +23,6 @@ export default async function getLatestRow(props: Props, ctx: Context): Promise<
     ),
   )
 
+  // @ts-ignore
   return maxBy(tableResults, 'maxPlatformUpdatedAt') || { maxPlatformUpdatedAt: null }
 }

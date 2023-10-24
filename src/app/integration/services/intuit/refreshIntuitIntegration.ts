@@ -1,10 +1,10 @@
 import { pick } from 'lodash'
 import { DateTime } from 'luxon'
 // Context provider and invariant (error creation) not included in this sample
-import { Context, invariant } from '../../..'
+// @ts-ignore
+import { Context, invariant, AppError } from '../../..'
 import getIntegration from '../../helpers/getIntegration'
 import updateIntegrationSecrets from '../../helpers/updateIntegrationSecrets'
-import AppError from '../../../AppError'
 
 type Props = {
   integrationId: string

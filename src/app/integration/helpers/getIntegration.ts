@@ -1,3 +1,5 @@
+// Context provider not included in this sample
+// @ts-ignore
 import { Context } from '../..'
 
 type Props = {

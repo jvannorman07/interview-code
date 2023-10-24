@@ -1,5 +1,6 @@
 // Context provider not included in this sample
-import { Context } from '../../../'
+// @ts-ignore
+import { Context } from '../..'
 
 type Props = {
   integrationId: string

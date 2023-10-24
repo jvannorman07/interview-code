@@ -1,4 +1,5 @@
 // context provider not included in this sample
+// @ts-ignore
 import { Context } from '../..'
 import getTableFromQBResponse from '../../formats/utils/getTableFromQBResponse'
 import { halveReportPeriod } from '../../../utils/date'

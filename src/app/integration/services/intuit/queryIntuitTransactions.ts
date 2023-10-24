@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
 // Context provider and invariant (error creation) not included in this sample
+// @ts-ignore
 import { Context, invariant } from '../../..'
 import getTransactionRange from '../../helpers/getTransactionRange'
 import getIntegration from '../../helpers/getIntegration'
