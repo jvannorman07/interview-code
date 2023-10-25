@@ -1,8 +1,8 @@
 # scrutinize-api
 
-Shareable sample of Scrutinize api content, including transformation utils, intuit api querying and loading, and an example db migration.
+Shareable sample of Scrutinize api content, including transformation utils, Intuit API querying and loading, and an example database migration.
 
-For general code and data manipulation examples, see src/app/utils/transform.ts and src/app/utils/mapToDestination.ts.
+For general code and data manipulation examples, see the [transform](./src/app/utils/transform.ts) and [mapToDestination](./src/app/utils/mapToDestination.ts) functions.
 
 ## High level overview of Intuit integration data ELT
 
@@ -49,12 +49,12 @@ export default async function queryIntegrationData(props: Props, ctx: Context) {
           kind: integration.kind,
         })
     }
-    ```
+```
 
 2. Extract - Intuit: If the integration is of type 'intuit', the [queryIntuit](./src/app/integration/services/intuit/queryIntuit.ts) function is called. This function fetches data from various Intuit endpoints.
 
-```ts
-export default async function queryIntuit(
+
+```ts export default async function queryIntuit(
   props: Props,
   ctx: Context,
 ): Promise<IntuitQueryResponses> {
